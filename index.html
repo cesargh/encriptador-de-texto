@@ -1,3 +1,11 @@
+<!--
+
+https://github.com/cesargh/encriptador-de-texto
+v1.0 | 2024-07-01
+License: None (Public Domain)
+
+-->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -8,6 +16,36 @@
     <title>Encriptador de Texto</title>
 </head>
 <body>
-    <script type="text/javascript" src="app.js"></script>
+    <header class="body__header">
+        <nav class="header__nav">
+            <a class="header__nav__anchor" href="index.html">Inicio</a>
+            <a class="header__nav__anchor" href="about.html">Acerca de...</a>
+        </nav>
+    </header>
+    <main class="body__main">
+        <h1 class="main__title">Encriptador de Texto</h1>
+        <div class="main__div">
+            <section class="div__section div__section__input">
+                <textarea id="textareaInput" class="textarea__default" placeholder="Ingresa aquí el texo sin encriptar."></textarea>
+                <p id="paragraphStatusInput">Sólo letras minúsculas sin acentos.</p>
+                <div class="section__buttons">
+                    <button id="buttonEncrypt" type="button" class="button__default button__encrypt" onclick="onclickButtonEncrypt();">Encriptar</button>
+                    <button id="buttonDecrypt" type="button" class="button__default button__decrypt" onclick="onclickButtonDecrypt();">Desencriptar</button>
+                    <button id="buttonPaste" type="button" class="button__default" onclick="onclickButtonPaste();">Pegar</button>
+                </div>
+            </section>
+            <section class="div__section div__section__output">
+                <textarea id="textareaOutput" class="textarea__default" placeholder="Aquí verás el texto encriptado." readonly></textarea>
+                <p id="paragraphStatusOutput">&nbsp;</p>
+                <div class="section__buttons">
+                    <button id="buttonCopy" type="button" class="button__default" onclick="onclickButtonCopy();">Copiar</button>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="body__footer">
+        <p>Desarrollado en Julio de 2024 por César para <a class="footer__anchor" target="_blank" rel="external" href="https://app.aluracursos.com/form-one/registro/latam-general">ONE + Alura Latam</a></p>
+    </footer>
+    <script type="text/javascript" src="app.js" defer></script>
 </body>
 </html>
