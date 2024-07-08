@@ -11,6 +11,8 @@ License: None (Public Domain)
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/responsive.css">
     <title>Encriptador de Texto</title>
@@ -26,16 +28,16 @@ License: None (Public Domain)
         <h1 class="main__title">Encriptador de Texto</h1>
         <div class="main__div">
             <section class="div__section div__section__input">
-                <textarea id="textareaInput" class="textarea__default" placeholder="Ingresa aquí el texo sin encriptar."></textarea>
+                <textarea id="textareaInput" class="textarea__default" placeholder="Ingresa el texto aquí." onpaste="synchTextareaOutput(false);" onkeydown="synchTextareaOutput(true);" onkeyup="delayCallback('synchTextareaOutput(false)');"></textarea>
                 <p id="paragraphStatusInput">Sólo letras minúsculas sin acentos.</p>
                 <div class="section__buttons">
-                    <button id="buttonEncrypt" type="button" class="button__default button__encrypt" onclick="onclickButtonEncrypt();">Encriptar</button>
-                    <button id="buttonDecrypt" type="button" class="button__default button__decrypt" onclick="onclickButtonDecrypt();">Desencriptar</button>
+                    <button id="buttonEncrypt" type="button" class="button__default button__encrypt" onclick="onclickButtonEncrypt(true);">Encriptar</button>
+                    <button id="buttonDecrypt" type="button" class="button__default button__decrypt" onclick="onclickButtonEncrypt(false);">Desencriptar</button>
                     <button id="buttonPaste" type="button" class="button__default" onclick="onclickButtonPaste();">Pegar</button>
                 </div>
             </section>
             <section class="div__section div__section__output">
-                <textarea id="textareaOutput" class="textarea__default" placeholder="Aquí verás el texto encriptado." readonly></textarea>
+                <textarea id="textareaOutput" class="textarea__default textarea__output__waiting" readonly></textarea>
                 <p id="paragraphStatusOutput">&nbsp;</p>
                 <div class="section__buttons">
                     <button id="buttonCopy" type="button" class="button__default" onclick="onclickButtonCopy();">Copiar</button>

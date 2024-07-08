@@ -142,6 +142,20 @@ body {
     resize: none;
 }
 
+.textarea__output__waiting {
+    background-image: url("/assets/waiting.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.textarea__output__writing {
+    background-image: url("/assets/writing.gif");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 .button__default {
     background-color: var(--color-button-default);
     border-color: var(--color-button-border);
